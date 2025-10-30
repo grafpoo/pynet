@@ -37,4 +37,11 @@ devices = [cisco3, arista1, nx_osv, juniper_srx]
 for device in devices:
     net_connect = ConnectHandler(**device)
     print(net_connect.find_prompt())
+    if "cisco" in device["host"]:
+        # output = net_connect.send_command("show ip int brief")
+        output = net_connect.send_command("show version")
+        tempfile = f"{device['host']}_show_version.txt"
+        with open(tempfile, "w") as f:
+            f.write(output)
     net_connect.disconnect()
+
