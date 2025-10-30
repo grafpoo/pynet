@@ -18,7 +18,7 @@ arista1 = {
     # "session_log": "sesh.log",
 }
 nx_osv = {
-    "host": "nsx01.lasthop.io", 
+    "host": "nxos1.lasthop.io", 
     "username": "pyclass",
     "password": password,
     "device_type": "cisco_ios",
